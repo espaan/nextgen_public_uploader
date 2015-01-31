@@ -1,0 +1,566 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: NextGEN Public Uploader v1.8.5\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2015-01-20 22:44:37+0000\n"
+"Last-Translator: carry2web <info@carry2web.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: CSL v1.x\n"
+"X-Poedit-Language: Dutch\n"
+"X-Poedit-Country: NETHERLANDS\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;\n"
+"X-Poedit-Basepath: ../\n"
+"X-Poedit-Bookmarks: \n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Textdomain-Support: yes"
+
+#: inc/class.npu_uploader.php:33
+#: inc/class.npu_uploader.php:182
+#@ nextgen-public-uploader
+msgid "No gallery selected."
+msgstr ""
+
+#: inc/class.npu_uploader.php:40
+#: inc/class.npu_uploader.php:189
+#@ nextgen-public-uploader
+msgid "Failure in database, no gallery path set."
+msgstr ""
+
+#: inc/class.npu_uploader.php:66
+#: inc/class.npu_uploader.php:204
+#@ nextgen-public-uploader
+msgid "is not a valid file."
+msgstr ""
+
+#: inc/class.npu_uploader.php:109
+#: inc/class.npu_uploader.php:215
+#, php-format
+#@ nextgen-public-uploader
+msgid "Unable to write to directory %s. Is this directory writable by the server?"
+msgstr ""
+
+#: inc/class.npu_uploader.php:115
+#: inc/class.npu_uploader.php:221
+#@ nextgen-public-uploader
+msgid "Error, the file could not moved to: "
+msgstr ""
+
+#: inc/class.npu_uploader.php:120
+#: inc/class.npu_uploader.php:226
+#@ nextgen-public-uploader
+msgid "Error, the file permissions could not set."
+msgstr ""
+
+#: inc/npu-upload.php:42
+#@ nextgen-public-uploader
+msgid "You do not have the correct permission"
+msgstr "Je hebt niet de juiste rechten"
+
+#: inc/npu-upload.php:43
+#@ nextgen-public-uploader
+msgid "Unexpected Error"
+msgstr ""
+
+#: inc/npu-upload.php:44
+#@ nextgen-public-uploader
+msgid "Upload Failed"
+msgstr ""
+
+#: inc/npu-upload.php:120
+#: inc/npu-upload.php:418
+#@ nextgen-public-uploader
+msgid "You must be registered and logged in to upload images."
+msgstr "U moet geregistreerd zijn op deze website en zijn ingelogd om fotos te kunnen inzenden"
+
+#: inc/npu-upload.php:146
+#: inc/npu-upload.php:218
+#: inc/npu-upload.php:441
+#@ nextgen-public-uploader
+msgid "Description:"
+msgstr "Beschrijving:"
+
+#: inc/npu-upload.php:255
+#: inc/npu-upload.php:494
+#@ nextgen-public-uploader
+msgid "Thank you! Your image has been submitted and is pending review."
+msgstr "Bedankt! Uw foto is ingestuurd en wacht op goedkeuring."
+
+#: inc/npu-upload.php:279
+#: inc/npu-upload.php:512
+#@ nextgen-public-uploader
+msgid "You must select a file to upload"
+msgstr "U dient een bestand te selecteren dat u wilt inzenden"
+
+#: inc/npu-upload.php:287
+#: inc/npu-upload.php:518
+#@ nextgen-public-uploader
+msgid "Upload failed!"
+msgstr ""
+
+#: inc/npu-upload.php:382
+#@ nextgen-public-uploader
+msgid "New Image Pending Review - NextGEN Public Uploader"
+msgstr "Een nieuwe inzending wacht op goedkeuring - NextGen Public Uploader"
+
+#: inc/npu-upload.php:383
+#@ nextgen-public-uploader
+msgid "A new image has been submitted and is waiting to be reviewed."
+msgstr "Een nieuwe foto is ingezonden en wacht op goedkeuring"
+
+#: inc/npu-upload.php:449
+#: nextgen-public-uploader.php:78
+#@ nextgen-public-uploader
+msgid "Upload"
+msgstr "Inzenden"
+
+#: inc/npu-upload.php:558
+#@ nextgen-public-uploader
+msgid "Upload images to a NextGEN Gallery"
+msgstr ""
+
+#: inc/npu-upload.php:561
+#@ nextgen-public-uploader
+msgctxt "widget name"
+msgid "NextGEN Uploader"
+msgstr ""
+
+#: inc/npu-upload.php:607
+#@ nextgen-public-uploader
+msgid "Title:"
+msgstr ""
+
+#: inc/npu-upload.php:611
+#@ nextgen-public-uploader
+msgid "Upload to :"
+msgstr ""
+
+#: inc/npu-upload.php:613
+#@ nextgen-public-uploader
+msgid "Choose gallery"
+msgstr ""
+
+#. translators: plugin header field 'Name'
+#: nextgen-public-uploader.php:0
+#: nextgen-public-uploader.php:120
+#: nextgen-public-uploader.php:269
+#@ nextgen-public-uploader
+msgid "NextGEN Public Uploader"
+msgstr ""
+
+#. translators: plugin header field 'PluginURI'
+#: nextgen-public-uploader.php:0
+#@ nextgen-public-uploader
+msgid "http://webdevstudios.com/plugin/nextgen-public-uploader/"
+msgstr ""
+
+#. translators: plugin header field 'Description'
+#: nextgen-public-uploader.php:0
+#@ nextgen-public-uploader
+msgid "NextGEN Public Uploader is an extension to NextGEN Gallery which allows frontend image uploads for your users."
+msgstr ""
+
+#. translators: plugin header field 'Author'
+#: nextgen-public-uploader.php:0
+#@ nextgen-public-uploader
+msgid "WebDevStudios"
+msgstr ""
+
+#. translators: plugin header field 'AuthorURI'
+#: nextgen-public-uploader.php:0
+#@ nextgen-public-uploader
+msgid "http://webdevstudios.com"
+msgstr ""
+
+#: nextgen-public-uploader.php:49
+#, php-format
+#@ nextgen-public-uploader
+msgid "%s NextGEN Public Uploader %s requires NextGEN Gallery in order to work. Please deactivate NextGEN Public Uploader or activate %s NextGEN Gallery %s"
+msgstr ""
+
+#: nextgen-public-uploader.php:79
+#@ nextgen-public-uploader
+msgid "No file selected."
+msgstr ""
+
+#: nextgen-public-uploader.php:80
+#@ nextgen-public-uploader
+msgid "You are not authorized to upload an image."
+msgstr "U heeft onvoldoende rechten om een foto in te zenden"
+
+#: nextgen-public-uploader.php:81
+#@ nextgen-public-uploader
+msgid "Your image has been successfully uploaded."
+msgstr ""
+
+#: nextgen-public-uploader.php:82
+#@ nextgen-public-uploader
+msgid "Your upload failed. Please try again."
+msgstr ""
+
+#: nextgen-public-uploader.php:107
+#, php-format
+#@ nextgen-public-uploader
+msgid "%s NextGEN Public Uploader %s by %s WordPress Website Design and Development %s"
+msgstr ""
+
+#: nextgen-public-uploader.php:121
+#@ nextgen-public-uploader
+msgid "Public Uploader"
+msgstr ""
+
+#: nextgen-public-uploader.php:133
+#@ nextgen-public-uploader
+msgid "Settings"
+msgstr ""
+
+#: nextgen-public-uploader.php:144
+#@ nextgen-public-uploader
+msgid "Plugin Settings"
+msgstr ""
+
+#: nextgen-public-uploader.php:180
+#@ nextgen-public-uploader
+msgid "Visitor"
+msgstr ""
+
+#: nextgen-public-uploader.php:181
+#@ nextgen-public-uploader
+msgid "Subscriber"
+msgstr ""
+
+#: nextgen-public-uploader.php:182
+#@ nextgen-public-uploader
+msgid "Contributor"
+msgstr ""
+
+#: nextgen-public-uploader.php:183
+#@ nextgen-public-uploader
+msgid "Author"
+msgstr ""
+
+#: nextgen-public-uploader.php:184
+#@ nextgen-public-uploader
+msgid "Editor"
+msgstr ""
+
+#: nextgen-public-uploader.php:185
+#@ nextgen-public-uploader
+msgid "Admin"
+msgstr ""
+
+#: nextgen-public-uploader.php:189
+#@ nextgen-public-uploader
+msgid "Default Gallery:"
+msgstr ""
+
+#: nextgen-public-uploader.php:189
+#, php-format
+#@ nextgen-public-uploader
+msgid "The default gallery ID when using %s with no ID specified."
+msgstr ""
+
+#: nextgen-public-uploader.php:190
+#@ nextgen-public-uploader
+msgid "Minimum User Role:"
+msgstr ""
+
+#: nextgen-public-uploader.php:190
+#@ nextgen-public-uploader
+msgid "The minimum user role required for image uploading."
+msgstr ""
+
+#: nextgen-public-uploader.php:191
+#@ nextgen-public-uploader
+msgid "Uploads Require Approval:"
+msgstr ""
+
+#: nextgen-public-uploader.php:191
+#@ nextgen-public-uploader
+msgid "Exclude images from appearing in galleries until they have been approved."
+msgstr ""
+
+#: nextgen-public-uploader.php:195
+#@ nextgen-public-uploader
+msgid "Show Description Field:"
+msgstr ""
+
+#: nextgen-public-uploader.php:195
+#@ nextgen-public-uploader
+msgid "Enable the Image Description text field."
+msgstr ""
+
+#: nextgen-public-uploader.php:196
+#@ nextgen-public-uploader
+msgid "Image Description Label:"
+msgstr ""
+
+#: nextgen-public-uploader.php:196
+#@ nextgen-public-uploader
+msgid "Default label shown for the image description textbox."
+msgstr ""
+
+#: nextgen-public-uploader.php:197
+#@ nextgen-public-uploader
+msgid "Notification Email:"
+msgstr ""
+
+#: nextgen-public-uploader.php:197
+#@ nextgen-public-uploader
+msgid "The email address to be notified when a image has been submitted."
+msgstr ""
+
+#: nextgen-public-uploader.php:198
+#@ nextgen-public-uploader
+msgid "Upload Button Text:"
+msgstr ""
+
+#: nextgen-public-uploader.php:198
+#@ nextgen-public-uploader
+msgid "Custom text for upload button."
+msgstr ""
+
+#: nextgen-public-uploader.php:199
+#@ nextgen-public-uploader
+msgid "No File Selected Warning:"
+msgstr ""
+
+#: nextgen-public-uploader.php:199
+#@ nextgen-public-uploader
+msgid "Warning displayed when no file has been selected for upload."
+msgstr ""
+
+#: nextgen-public-uploader.php:200
+#@ nextgen-public-uploader
+msgid "Unauthorized Warning:"
+msgstr ""
+
+#: nextgen-public-uploader.php:200
+#@ nextgen-public-uploader
+msgid "Warning displayed when a user does not have permission to upload."
+msgstr ""
+
+#: nextgen-public-uploader.php:201
+#@ nextgen-public-uploader
+msgid "Upload Success Message:"
+msgstr ""
+
+#: nextgen-public-uploader.php:201
+#@ nextgen-public-uploader
+msgid "Message displayed when an image has been successfully uploaded."
+msgstr ""
+
+#: nextgen-public-uploader.php:202
+#@ nextgen-public-uploader
+msgid "Upload Failed Message:"
+msgstr ""
+
+#: nextgen-public-uploader.php:202
+#@ nextgen-public-uploader
+msgid "Message displayed when an image failed to upload."
+msgstr ""
+
+#: nextgen-public-uploader.php:208
+#@ nextgen-public-uploader
+msgid "Link Love:"
+msgstr ""
+
+#: nextgen-public-uploader.php:208
+#@ nextgen-public-uploader
+msgid "Display link to this plugin in your site's footer (because you love us!)"
+msgstr ""
+
+#: nextgen-public-uploader.php:214
+#@ nextgen-public-uploader
+msgid "Edit the settings below to control the default behaviors of this plugin."
+msgstr ""
+
+#: nextgen-public-uploader.php:271
+#@ nextgen-public-uploader
+msgid "Settings saved."
+msgstr ""
+
+#: nextgen-public-uploader.php:274
+#@ nextgen-public-uploader
+msgid "Current Version"
+msgstr ""
+
+#: nextgen-public-uploader.php:276
+#@ nextgen-public-uploader
+msgid "Donate"
+msgstr ""
+
+#: nextgen-public-uploader.php:277
+#@ nextgen-public-uploader
+msgid "Plugin Homepage"
+msgstr ""
+
+#: nextgen-public-uploader.php:278
+#@ nextgen-public-uploader
+msgid "Support Forum"
+msgstr ""
+
+#: nextgen-public-uploader.php:281
+#@ nextgen-public-uploader
+msgid "Shortcode Examples"
+msgstr ""
+
+#: nextgen-public-uploader.php:282
+#, php-format
+#@ nextgen-public-uploader
+msgid "To insert the public uploader into any content area, use %s or %s, where %s is the ID of the corresponding gallery."
+msgstr ""
+
+#: tinymce/window.php:8
+#@ default
+msgid "You are not allowed to be here"
+msgstr ""
+
+#: tinymce/window.php:61
+#@ ngg-public-uploader
+msgid "Gallery"
+msgstr ""
+
+#: tinymce/window.php:75
+#@ ngg-public-uploader
+msgid "Select Gallery:"
+msgstr ""
+
+#: tinymce/window.php:97
+#@ cetsHW
+msgid "Cancel"
+msgstr "Afbreken"
+
+#: tinymce/window.php:101
+#@ cetsHW
+msgid "Insert"
+msgstr "Invoegen"
+
+#: inc/class.npu_uploader.php:79
+#@ nextgen-public-uploader
+msgid "width in pixels is too small. Minimum "
+msgstr ""
+
+#: inc/class.npu_uploader.php:83
+#@ nextgen-public-uploader
+msgid "width in pixels is too large. Maximum "
+msgstr ""
+
+#: inc/class.npu_uploader.php:87
+#@ nextgen-public-uploader
+msgid "height in pixels is too small. Minimum "
+msgstr ""
+
+#: inc/class.npu_uploader.php:91
+#@ nextgen-public-uploader
+msgid "height in pixels is too large. Maximum "
+msgstr ""
+
+#: inc/class.npu_uploader.php:96
+#@ nextgen-public-uploader
+msgid "filesize is too large. Maximum "
+msgstr ""
+
+#: inc/npu-upload.php:83
+#@ nextgen-public-uploader
+msgid "+ Add another picture total "
+msgstr "+ Voeg nog een foto toe"
+
+#: inc/npu-upload.php:189
+#: inc/npu-upload.php:193
+#, php-format
+#@ nextgen-public-uploader
+msgid "+ Add another picture (total %d)"
+msgstr "+ Voeg nog een foto toe (totaal %d)"
+
+#. translators: plugin header field 'Version'
+#: nextgen-public-uploader.php:0
+#@ nextgen-public-uploader
+msgid "1.8.5"
+msgstr ""
+
+#: nextgen-public-uploader.php:192
+#@ nextgen-public-uploader
+msgid "Use hash in filename"
+msgstr ""
+
+#: nextgen-public-uploader.php:192
+#@ nextgen-public-uploader
+msgid "Use a generated hash in the uploaded filename."
+msgstr ""
+
+#: nextgen-public-uploader.php:193
+#@ nextgen-public-uploader
+msgid "How many default images to upload:"
+msgstr ""
+
+#: nextgen-public-uploader.php:194
+#@ nextgen-public-uploader
+msgid "Maximum image inputs for one upload:"
+msgstr ""
+
+#: nextgen-public-uploader.php:203
+#@ nextgen-public-uploader
+msgid "Minimum images width [px]:"
+msgstr ""
+
+#: nextgen-public-uploader.php:203
+#@ nextgen-public-uploader
+msgid "The minimum width of an image to upload in Pixels (-1 = ignore)"
+msgstr ""
+
+#: nextgen-public-uploader.php:204
+#@ nextgen-public-uploader
+msgid "Minimum images height [px]:"
+msgstr ""
+
+#: nextgen-public-uploader.php:204
+#@ nextgen-public-uploader
+msgid "The minimum height of an image to upload in Pixels (-1 = ignore)"
+msgstr ""
+
+#: nextgen-public-uploader.php:205
+#@ nextgen-public-uploader
+msgid "Maximum images width [px]:"
+msgstr ""
+
+#: nextgen-public-uploader.php:205
+#@ nextgen-public-uploader
+msgid "The maximum width of an image to upload in Pixels (-1 = ignore)"
+msgstr ""
+
+#: nextgen-public-uploader.php:206
+#@ nextgen-public-uploader
+msgid "Maximum images height [px]:"
+msgstr ""
+
+#: nextgen-public-uploader.php:206
+#@ nextgen-public-uploader
+msgid "The maximum height of an image to upload in Pixels (-1 = ignore)"
+msgstr ""
+
+#: nextgen-public-uploader.php:207
+#@ nextgen-public-uploader
+msgid "Maximum filesize [kB]:"
+msgstr ""
+
+#: nextgen-public-uploader.php:207
+#@ nextgen-public-uploader
+msgid "The maximum filesize of an image to upload in kB (-1 = ignore)"
+msgstr ""
+
+#: nextgen-public-uploader.php:193
+#@ nextgen-public-uploader
+msgid "How many upload inputs to show by default? (empty = 1)"
+msgstr ""
+
+#: nextgen-public-uploader.php:194
+#@ nextgen-public-uploader
+msgid "Maximum upload inputs to show for one upload ? (-1 = ignore)"
+msgstr ""
+
