@@ -97,11 +97,11 @@ if ( ! class_exists( 'npuGalleryUpload' ) ) {
                 $strOutput .= '</div>';
             }
             if ( count( $this->arrImageMsg ) > 0 ) {
-                $strOutput .= '<div class="upload_error">';
+                $strOutput .= '<div class="upload_error"><strong>';
                 foreach ( $this->arrImageMsg as $msg ) {
                     $strOutput .= $msg;
                 }
-                $strOutput .= '</div>';
+                $strOutput .= '</strong></div>';
             }
             if ( !is_user_logged_in() && get_option( 'npu_user_role_select' ) != 99 ) {
                 $strOutput .= '<div class="need_login">';
@@ -163,41 +163,41 @@ if ( ! class_exists( 'npuGalleryUpload' ) ) {
                     $inputs = 1;
                     if ( get_option( 'npu_use_html5_multiple' ) == 'Enabled' ) {
                         $strOutput .= "<input id=\"imagefiles". $gal_id ."\" name=\"imagefiles[]\" type=\"file\" accept=\"image/*\" multiple=\"multiple\" />";
-				        $strOutput .= "<ul id=\"file-list". $gal_id ."\"><li class=\"no-items\">" . __( '(no uploaded files yet)', 'nextgen-public-uploader' ) . "</li></ul>";
+                        $strOutput .= "<ul id=\"file-list". $gal_id ."\"><li class=\"no-items\">" . __( '(no uploaded files yet)', 'nextgen-public-uploader' ) . "</li></ul>";
                         $strOutput .= "<script type=\"text/javascript\">
 (function () {
     var filesUpload = document.getElementById(\"imagefiles". $gal_id ."\"),
-	fileList = document.getElementById(\"file-list". $gal_id ."\");
-	
-	function traverseFiles (files) {
+    fileList = document.getElementById(\"file-list". $gal_id ."\");
+    
+    function traverseFiles (files) {
         var li,
-			file,
-			fileInfo;
-		fileList.innerHTML = \"\";
+            file,
+            fileInfo;
+        fileList.innerHTML = \"\";
 
         // Not fail safe, but basic client side limitation
-		if (files.length > " . $option_max_uploads . ") {
-		    alert(\"" . __( 'Over the maximum number of files: ', 'nextgen-public-uploader' ) . ' ' . $option_max_uploads . "\");
-		    filesUpload.value = '';
-		    files = array();
-		    return;
-		}
+        if (files.length > " . $option_max_uploads . ") {
+            alert(\"" . __( 'Over the maximum number of files: ', 'nextgen-public-uploader' ) . ' ' . $option_max_uploads . "\");
+            filesUpload.value = '';
+            files = array();
+            return;
+        }
 
-		for (var i=0, il=files.length; i<il; i++) {
+        for (var i=0, il=files.length; i<il; i++) {
             li = document.createElement(\"li\");
             file = files[i];
-			fileInfo = \"<div><strong>" . __( 'Name:', 'nextgen-public-uploader' ) . "</strong> \" + file.name + \"</div>\";
-			fileInfo += \"<div><strong>" . __( 'Size:', 'nextgen-public-uploader' ) . "</strong> \" + Math.round(file.size/1024) + \" kB</div>\";
-			//fileInfo += \"<div><strong>" . __( 'Type:', 'nextgen-public-uploader' ) . "</strong> \" + file.type + \"</div>\";
-			li.innerHTML = fileInfo;
-			fileList.appendChild(li);
-		};
-	};
-	
-	filesUpload.onchange = function () {
+            fileInfo = \"<div><strong>" . __( 'Name:', 'nextgen-public-uploader' ) . "</strong> \" + file.name + \"</div>\";
+            fileInfo += \"<div><strong>" . __( 'Size:', 'nextgen-public-uploader' ) . "</strong> \" + Math.round(file.size/1024) + \" kB</div>\";
+            //fileInfo += \"<div><strong>" . __( 'Type:', 'nextgen-public-uploader' ) . "</strong> \" + file.type + \"</div>\";
+            li.innerHTML = fileInfo;
+            fileList.appendChild(li);
+        };
+    };
+    
+    filesUpload.onchange = function () {
         traverseFiles(this.files);
     };
-	})();</script>";
+    })();</script>";
                     } else {
                         while($inputs <= $option_default_uploads) {
                             $strOutput .= "\n\t<input type=\"file\" name=\"imagefiles[]\" id=\"imagefiles". $gal_id . $inputs . "\" />";
@@ -216,20 +216,22 @@ if ( ! class_exists( 'npuGalleryUpload' ) ) {
                         $strOutput .= "\n\t</div>";
                     }
 
+                    //$strOutput .= $this->maybe_display_image_description();
+
                     $strOutput .= apply_filters( 'npu_gallery_upload_display_uploader_before_submit', '', $this, 'shortcode' );
 
                     $strOutput .= "\n\t<div class=\"submit\"><br />";
                     if ( get_option( 'npu_upload_button' ) ) {
                         if ($option_max_uploads > $option_default_uploads && get_option( 'npu_use_html5_multiple' ) != 'Enabled' ) {
-                            $strOutput .= "\n\t\t <input type=\"button\" value=\"" . sprintf( __( '+ Add another picture (total %d)', 'nextgen-public-uploader' ), $option_max_uploads ) . "\" id=\"npu_upload_addBtn". $gal_id ."\" />";
+                            $strOutput .= "\n\t\t<input type=\"button\" value=\"" . sprintf( __( '+ Add another picture (total %d)', 'nextgen-public-uploader' ), $option_max_uploads ) . "\" id=\"npu_upload_addBtn". $gal_id ."\" />";
                         }
                         $strOutput .= "\n\t\t<input class=\"button-primary\" type=\"submit\" name=\"uploadimage\" id=\"uploadimage_btn". $gal_id ."\" ";
                         $strOutput .= 'value="' . get_option( 'npu_upload_button' ) . ' (' . get_option( 'npu_max_uploads_msg' ) . ' ' . $option_max_uploads . ')' . '">';
                     } else {
                         if ($option_max_uploads > $option_default_uploads && get_option( 'npu_use_html5_multiple' ) != 'Enabled' ) {
-                            $strOutput .= "\n\t\t <input type=\"button\" value=\"" . sprintf( __( '+ Add another picture (total %d)', 'nextgen-public-uploader' ), $option_max_uploads ) . "\" id=\"npu_upload_addBtn". $gal_id ."\" />";
+                            $strOutput .= "\n\t\t<input type=\"button\" value=\"" . sprintf( __( '+ Add another picture (total %d)', 'nextgen-public-uploader' ), $option_max_uploads ) . "\" id=\"npu_upload_addBtn". $gal_id ."\" />";
                         }
-                        $strOutput .= "\n\t\t <input class=\"button-primary\" type=\"submit\" name=\"uploadimage\" id=\"uploadimage_btn". $gal_id ."\" value=\"Upload\" />";
+                        $strOutput .= "\n\t\t<input class=\"button-primary\" type=\"submit\" name=\"uploadimage\" id=\"uploadimage_btn". $gal_id ."\" value=\"Upload\" />";
                     }
                     $strOutput .= "\n\t\t</div>";
                     $strOutput .= "\n</form>";
@@ -242,13 +244,28 @@ if ( ! class_exists( 'npuGalleryUpload' ) ) {
             $strOutput = apply_filters( 'npu_gallery_upload_display_uploader', $strOutput, $gal_id, $strDetailsPage, $blnShowAltText, $echo, 'shortcode', $this );
 
             if ( $echo ) {
-                echo $strOutput;
+                   echo $strOutput;
             } else {
                 return $strOutput;
             }
         }
 
-        // Function: Handle Upload for regular shortcode
+        public function maybe_display_image_description( $i = false ) {
+
+            $strOutput = '';
+
+            if ( 'Enabled' == get_option( 'npu_image_description_select' ) ) {
+                $strOutput .= '<br />' . get_option( 'npu_description_text',  __( 'Description:', 'nextgen-public-uploader' ) ) . '<br />';
+
+                $name = is_numeric( $i ) ? 'imagedescription_' . $i : 'imagedescription';
+
+                $strOutput .= "\n\t<input type=\"text\" name=\"" . esc_attr( $name ) . "\" id=\"" . esc_attr( $name ) . "\"/>";
+            }
+
+            return $strOutput;
+        }
+
+        // Function: Handle Upload for Shortcode
         public function handleUpload() {
             global $wpdb;
             require_once( dirname (__FILE__) . '/class.npu_uploader.php' );
@@ -270,16 +287,12 @@ if ( ! class_exists( 'npuGalleryUpload' ) ) {
                             }
                         }
 
-                        // multiple file image upload mail message
-                        if(get_option('npu_upload_success')) {
-                            if ($this->arrImageMsg[0] != get_option('npu_upload_success')){
-                                $this->arrImageMsg[] = get_option('npu_upload_success');
-                                $this->sendEmail();
-                            }
+                        if ( get_option( 'npu_upload_success' ) ) {
+                            $this->arrImageMsg[] = get_option( 'npu_upload_success' );
                         } else {
                             $this->arrImageMsg[] = __( 'Thank you! Your image has been submitted and is pending review.', 'nextgen-public-uploader' );
-                            $this->sendEmail();
                         }
+                        $this->sendEmail();
                     }
                     if ( is_array( $this->arrImageIds ) && count( $this->arrImageIds ) > 0 ) {
                         foreach ( $this->arrImageIds as $imageId ) {
@@ -497,72 +510,85 @@ if ( ! class_exists( 'npuGalleryUpload' ) ) {
                         $output .= "<script type=\"text/javascript\">
 (function () {
     var filesUpload = document.getElementById(\"imagefiles" . $gal_id . "\"),
-	fileList = document.getElementById(\"file-list" . $gal_id . "\");
+    fileList = document.getElementById(\"file-list" . $gal_id . "\");
 
-	function traverseFiles (files) {
+    function traverseFiles (files) {
         var li,
-			file,
-			fileInfo;
-		fileList.innerHTML = \"\";
+            file,
+            fileInfo;
+        fileList.innerHTML = \"\";
 
         // Not fail safe, but basic client side limitation
-		if (files.length > " . $option_max_uploads . ") {
-		    alert(\"" . __( 'Over the maximum number of files: ', 'nextgen-public-uploader' ) . ' ' . $option_max_uploads . "\");
-		    filesUpload.value = '';
-		    files = array();
-		    return;
-		}
+        if (files.length > " . $option_max_uploads . ") {
+            alert(\"" . __( 'Over the maximum number of files: ', 'nextgen-public-uploader' ) . ' ' . $option_max_uploads . "\");
+            filesUpload.value = '';
+            files = array();
+            return;
+        }
 
-		for (var i=0, il=files.length; i<il; i++) {
+        for (var i=0, il=files.length; i<il; i++) {
             li = document.createElement(\"li\");
             file = files[i];
-			fileInfo = \"<div><strong>" . __( 'Name:', 'nextgen-public-uploader' ) . "</strong> \" + file.name + \"</div>\";
-			fileInfo += \"<div><strong>" . __( 'Size:', 'nextgen-public-uploader' ) . "</strong> \" + Math.round(file.size/1024) + \" kB</div>\";
-			//fileInfo += \"<div><strong>" . __( 'Type:', 'nextgen-public-uploader' ) . "</strong> \" + file.type + \"</div>\";
-			li.innerHTML = fileInfo;
-			fileList.appendChild(li);
-		};
-	};
+            fileInfo = \"<div><strong>" . __( 'Name:', 'nextgen-public-uploader' ) . "</strong> \" + file.name + \"</div>\";
+            fileInfo += \"<div><strong>" . __( 'Size:', 'nextgen-public-uploader' ) . "</strong> \" + Math.round(file.size/1024) + \" kB</div>\";
+            //fileInfo += \"<div><strong>" . __( 'Type:', 'nextgen-public-uploader' ) . "</strong> \" + file.type + \"</div>\";
+            li.innerHTML = fileInfo;
+            fileList.appendChild(li);
+        };
+    };
 
-	filesUpload.onchange = function () {
+    filesUpload.onchange = function () {
         traverseFiles(this.files);
     };
-	})();</script>";
+    })();</script>";
                     } else {
                         while($inputs <= $option_default_uploads) {
                             $output .= "\n\t<input type=\"file\" name=\"imagefiles[]\" id=\"imagefiles" . $gal_id . $inputs . "\" />";
                             if ( get_option( 'npu_image_description_select' ) == 'Enabled' ) {
                                 $output .= '<br />' . $file_description;
-                                $output .= "\n\t <input type=\"text\" size=\"50\" placeholder=\"" . get_option( 'npu_description_placeholder' ) . "\" name=\"imagedescription[]\" id=\"imagedescription" . $gal_id . $inputs . "\" /><br />";
+                                $output .= "\n\t<input type=\"text\" size=\"50\" placeholder=\"" . get_option( 'npu_description_placeholder' ) . "\" name=\"imagedescription[]\" id=\"imagedescription" . $gal_id . $inputs . "\" /><br />";
                             }
                             $inputs++;
                         }
                     }
                     $output .= "\n\t</div>"; // UploaderDiv
 
-                    if ( !$strDetailsPage ) {
-                        $output .= "\n\t<div class=\"image_details_textfield\">";
+                    if ( ! $strDetailsPage ) {
+                        $output .= '<div class="image_details_textfield">';
                         if ( $blnShowAltText ) {}
-                        $output .= "\n\t</div>";
+                        $output .= '</div>';
+                    }
+
+                    if( get_option( 'npu_image_description_select' ) == 'Enabled' ) {
+                        $output .= '<label for="imagedescription">';
+
+                        $output .= ( get_option( 'npu_description_text' ) ) ? get_option( 'npu_description_text' ) : __( 'Description:', 'nextgen-public-uploader' );
+
+                        $output .= '</label>';
+                        $output .= '<input type="text" name="imagedescription" id="imagedescription"/>';
                     }
 
                     $output .= apply_filters( 'npu_gallery_upload_display_uploader_before_submit', '', $this, 'widget' );
 
+                    //set up our submit value text.
+                    $submit = ( get_option( 'npu_upload_button' ) ) ? get_option( 'npu_upload_button' ) : __( 'Upload', 'nextgen-public-uploader' );
+
                     $output .= "\n\t<div class=\"submit\"><br />";
                     if ( get_option( 'npu_upload_button' ) ) {
                         if ($option_max_uploads > $option_default_uploads && get_option( 'npu_use_html5_multiple' ) != 'Enabled' ) {
-                            $output .= "\n\t\t <input type=\"button\" value=\"" . sprintf( __( '+ Add another picture (total %d)', 'nextgen-public-uploader' ), $option_max_uploads ) . "\" id=\"npu_upload_addBtn" . $gal_id . "\" />";
+                            $output .= "\n\t\t<input type=\"button\" value=\"" . sprintf( __( '+ Add another picture (total %d)', 'nextgen-public-uploader' ), $option_max_uploads ) . "\" id=\"npu_upload_addBtn" . $gal_id . "\" />";
                         }
                         $output .= "\n\t\t<input class=\"button-primary\" type=\"submit\" name=\"uploadimage\" id=\"uploadimage_btn" . $gal_id . "\" ";
                         $output .= 'value="' . get_option( 'npu_upload_button' ) . ' (' . get_option( 'npu_max_uploads_msg' ) . ' ' . $option_max_uploads . ')' . '">';
                     } else {
                         if ($option_max_uploads > $option_default_uploads && get_option( 'npu_use_html5_multiple' ) != 'Enabled' ) {
-                            $output .= "\n\t\t <input type=\"button\" value=\"" . sprintf( __( '+ Add another picture (total %d)', 'nextgen-public-uploader' ), $option_max_uploads ) . "\" id=\"npu_upload_addBtn" . $gal_id . "\" />";
+                            $output .= "\n\t\t<input type=\"button\" value=\"" . sprintf( __( '+ Add another picture (total %d)', 'nextgen-public-uploader' ), $option_max_uploads ) . "\" id=\"npu_upload_addBtn" . $gal_id . "\" />";
                         }
-                        $output .= "\n\t\t <input class=\"button-primary\" type=\"submit\" name=\"uploadimage\" id=\"uploadimage_btn" . $gal_id . "\" value=\"Upload\" />";
+                        $output .= "\n\t\t<input class=\"button-primary\" type=\"submit\" name=\"uploadimage\" id=\"uploadimage_btn" . $gal_id . "\" value=\"" . $submit . "\" />";
                     }
                     $output .= "\n\t\t</div></form></div>";
                     $output .= apply_filters( 'npu_gallery_upload_display_uploader_after_form', '', $this, 'widget' );
+                    //$output .= '<div class="submit"><input class="button-primary" type="submit" name="uploadimage_widget" id="uploadimage_btn" value="' . $submit . '" /></div></form></div>';
                 }
             }
 
@@ -718,19 +744,19 @@ class NextGenPublicUploader extends WP_Widget {
         $gallerylist = $nggdb->find_all_galleries( 'gid', 'DESC' ); ?>
 
         <p><label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:', 'nextgen-public-uploader' ); ?></label>
-            <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $instance['title'] ); ?>" /></p>
+        <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $instance['title'] ); ?>" /></p>
 
         <p>
-            <label for="<?php echo $this->get_field_id( 'gal_id' ); ?>"><?php _e( 'Upload to :', 'nextgen-public-uploader' ); ?></label>
-            <select id="<?php echo $this->get_field_id( 'gal_id' ) ?>" name="<?php echo $this->get_field_name( 'gal_id' ); ?>">
-                <option value="0" ><?php _e( 'Choose gallery', 'nextgen-public-uploader' ); ?></option>
-                <?php
-                foreach( $gallerylist as $gallery ) {
-                    $name = ( empty( $gallery->title ) ) ? $gallery->name : $gallery->title;
-                    echo '<option ' . selected( $instance['gal_id'], $gallery->gid, false ) . ' value="' . $gallery->gid . '">ID: ' . $gallery->gid . ' &ndash; ' . $name . '</option>';
-                }
-                ?>
-            </select>
+        <label for="<?php echo $this->get_field_id( 'gal_id' ); ?>"><?php _e( 'Upload to :', 'nextgen-public-uploader' ); ?></label>
+        <select id="<?php echo $this->get_field_id( 'gal_id' ) ?>" name="<?php echo $this->get_field_name( 'gal_id' ); ?>">
+            <option value="0" ><?php _e( 'Choose gallery', 'nextgen-public-uploader' ); ?></option>
+            <?php
+            foreach( $gallerylist as $gallery ) {
+                $name = ( empty( $gallery->title ) ) ? $gallery->name : $gallery->title;
+                echo '<option ' . selected( $instance['gal_id'], $gallery->gid, false ) . ' value="' . $gallery->gid . '">ID: ' . $gallery->gid . ' &ndash; ' . $name . '</option>';
+            }
+            ?>
+        </select>
         </p>
     <?php
     }
