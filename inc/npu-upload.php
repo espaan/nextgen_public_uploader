@@ -287,8 +287,11 @@ if ( ! class_exists( 'npuGalleryUpload' ) ) {
                             }
                         }
 
-                        if ( get_option( 'npu_upload_success' ) ) {
-                            $this->arrImageMsg[] = get_option( 'npu_upload_success' );
+                        // multiple file image upload mail message
+                        if(get_option('npu_upload_success')) {
+                            if ($this->arrImageMsg[0] != get_option('npu_upload_success')){
+                                $this->arrImageMsg[] = get_option('npu_upload_success');
+                            }
                         } else {
                             $this->arrImageMsg[] = __( 'Thank you! Your image has been submitted and is pending review.', 'nextgen-public-uploader' );
                         }
